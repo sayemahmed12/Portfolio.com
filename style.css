@@ -1,0 +1,293 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+body {
+    min-height: 100vh;
+    color: #1f2937;
+    background: linear-gradient(-45deg, #e0e7ff, #fce7f3, #dbeafe, #ecfeff);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 20px 40px;
+}
+
+/* =========================
+   NAVBAR (STICKY + GLASS)
+========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-weight: 600;
+    color: #111827;
+    font-size: 16px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6366f1;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 34px;
+    color: #111827;
+}
+
+.subtitle {
+    margin-top: 10px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #6366f1;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #6366f1;
+    color: #6366f1;
+    background: white;
+}
+
+.secondary-btn:hover {
+    background: #6366f1;
+    color: white;
+}
+
+/* =========================
+   GLASS CARDS
+========================= */
+.card {
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.project {
+    margin-top: 15px;
+    padding: 15px;
+    border-left: 4px solid #6366f1;
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99,102,241,0.3);
+}
+
+/* =========================
+   SKILLS
+========================= */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills span {
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.skills span:hover {
+    border-color: #6366f1;
+    transform: scale(1.05);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color: #6366f1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .container {
+        padding-top: 120px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .project {
+        padding: 12px;
+    }
+
+    .btn {
+        display: block;
+        margin: 8px auto;
+    }
+}
